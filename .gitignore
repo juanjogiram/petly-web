@@ -1,0 +1,10 @@
+# Artefactos / temporales
+files.zip
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
