@@ -174,6 +174,22 @@
   .member .role{color:var(--violet-bright);font-weight:700;font-size:.9rem;margin-top:2px}
   .member p{color:var(--soft);font-size:.95rem;margin-top:10px}
 
+  /* story */
+  .story{max-width:780px;margin:0 auto}
+  .story-card{padding:36px}
+  .story-card p{color:var(--soft);font-size:1.1rem;margin-top:16px}
+  .story-card p:first-of-type{margin-top:0}
+  .story-card p .hi{color:var(--violet-bright);font-weight:700}
+  .story-card p b{color:var(--ink);font-weight:700}
+  .story-sign{margin-top:24px;font-family:var(--display);font-weight:600;color:var(--violet-lift);font-size:1.05rem}
+  .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+  @media(max-width:760px){.timeline{grid-template-columns:1fr}}
+  .tl{padding:24px;text-align:center}
+  .tl .dot{width:44px;height:44px;border-radius:13px;margin:0 auto 14px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--violet),var(--violet-deep));color:#fff;box-shadow:0 10px 24px -10px rgba(130,81,253,.8)}
+  .tl b{font-family:var(--display);font-weight:600;font-size:1.08rem;display:block}
+  .tl span{color:var(--soft);font-size:.94rem;display:block;margin-top:7px}
+
   /* footer */
   footer{padding:48px 0 36px;border-top:1px solid rgba(157,123,255,.12);margin-top:30px}
   .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
@@ -199,6 +215,7 @@
       <a href="#ai" data-en="AI">IA</a>
       <a href="#download" data-en="Install">Instalar</a>
       <a href="#team" data-en="About us">Quiénes somos</a>
+      <a href="#story" data-en="Story">Historia</a>
     </div>
     <div class="nav-right">
       <div class="lang" role="group" aria-label="Language">
@@ -448,6 +465,47 @@
   </div>
 </section>
 
+<!-- STORY -->
+<section id="story">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-en="Our story">Nuestra historia</span>
+      <h2 data-en="How Petly was born">Cómo nació Petly</h2>
+    </div>
+    <div class="story">
+      <div class="glass story-card reveal">
+        <p data-html data-en='It all started with a shared frustration: caring for a pet feels like <span class="hi">guesswork</span>. There&#39;s endless advice online, but none of it knows <span class="hi">your</span> companion — their age, breed, history, or the weather in your city. So we asked: what if technology got ahead of you, instead of waiting for you to ask?'>Todo empezó con una frustración compartida: cuidar a una mascota se siente como <span class="hi">adivinar</span>. Hay mil consejos en internet, pero ninguno conoce a <span class="hi">tu</span> compañero — su edad, su raza, su historial, ni el clima de tu ciudad. Así que nos preguntamos: ¿y si la tecnología se adelantara, en vez de esperar a que preguntes?</p>
+        <p data-html data-en='We were three with pieces that fit together. <b>Matías</b>, obsessed with product and experience. <b>Juan José</b>, turning chaos into sprints and guarding the vision and the business. <b>Juanes</b>, giving it an AI brain that truly understands each pet. None of us could do it alone — together, we could.'>Éramos tres con piezas que encajaban. <b>Matías</b>, obsesionado con el producto y la experiencia. <b>Juan José</b>, ordenando el caos en sprints y cuidando la visión y el negocio. <b>Juanes</b>, dándole un cerebro de IA que de verdad entiende a cada mascota. Ninguno podía solo — juntos, sí.</p>
+        <p data-html data-en='In just a few weeks, with agile methodology and many late nights, we took Petly from an idea to a working app: proactive reminders, real health tracking and a contextual AI per pet. And this is only the beginning.'>En pocas semanas, con metodología ágil y muchas noches, llevamos Petly de una idea a una app funcional: recordatorios proactivos, salud real y una IA contextual por mascota. Y esto apenas empieza.</p>
+        <p class="story-sign" data-en="— Matías, Juan José &amp; Juanes">— Matías, Juan José y Juanes</p>
+      </div>
+      <div class="timeline">
+        <div class="tl glass reveal">
+          <div class="dot">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z"/></svg>
+          </div>
+          <b data-en="The spark">La chispa</b>
+          <span data-en="An idea: care that gets ahead — instead of guessing.">Una idea: que el cuidado se adelante — en vez de adivinar.</span>
+        </div>
+        <div class="tl glass reveal">
+          <div class="dot">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>
+          </div>
+          <b data-en="Three that fit">Tres que encajan</b>
+          <span data-en="Product, business and AI — each one a piece.">Producto, negocio e IA — cada uno su pieza.</span>
+        </div>
+        <div class="tl glass reveal">
+          <div class="dot">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-8 12h6l-1 8 8-12h-6z"/></svg>
+          </div>
+          <b data-en="Zero to real">De cero a real</b>
+          <span data-en="Weeks of agile sprints to a working app.">Semanas de sprints ágiles hasta una app funcional.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="wrap foot-in">
@@ -455,6 +513,7 @@
     <div class="foot-links">
       <a href="#features" data-en="Features">Funciones</a>
       <a href="#team" data-en="Team">Equipo</a>
+      <a href="#story" data-en="Story">Historia</a>
       <a href="#download" data-en="Install">Instalar</a>
       <a href="mailto:hola@petly.app" data-en="Contact">Contacto</a>
     </div>
