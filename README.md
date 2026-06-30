@@ -1,57 +1,57 @@
 # petly-web
 
-Landing comercial de **Petly** — el copiloto de salud con IA para tu mascota.
+Commercial landing page for **Petly** — the AI health copilot for your pet.
 
-Sitio estático de una sola página (HTML + CSS, sin build). Público: visitantes
-nuevos, potenciales usuarios e inversores. No consume el backend.
+A single-page static site (HTML + CSS, no build). Audience: new visitors,
+potential users and investors. It does not consume the backend.
 
-## Estructura
+## Structure
 
 ```
 petly-web/
-├── index.html     ← toda la landing (HTML + CSS + JS inline)
-├── qr.png         ← código QR de descarga (REEMPLAZAR por el real)
+├── index.html     ← the whole landing (inline HTML + CSS + JS)
+├── qr.png         ← download QR code (REPLACE with the real one)
 └── README.md
 ```
 
-## Ver en local
+## Run locally
 
-No necesita build. Abre `index.html` en el navegador, o sirve la carpeta:
+No build needed. Open `index.html` in the browser, or serve the folder:
 
 ```bash
 npx serve .
-# o
+# or
 python3 -m http.server 8000
 ```
 
-## Reemplazar el QR
+## Replace the QR
 
-El `qr.png` incluido es un placeholder que apunta al repo. Genera el real
-apuntando a la URL de descarga del APK (o a la Play Store cuando exista):
+The bundled `qr.png` is a placeholder pointing to the repo. Generate the real
+one pointing to the APK download URL (or the Play Store once it exists):
 
 ```bash
 pip install "qrcode[pil]"
-python3 -c "import qrcode; qrcode.make('https://TU-URL-DE-DESCARGA').save('qr.png')"
+python3 -c "import qrcode; qrcode.make('https://YOUR-DOWNLOAD-URL').save('qr.png')"
 ```
 
-## Secciones
+## Sections
 
-Hero · Problema · Funciones (3 tarjetas) · Diferenciador IA (con demo) ·
-Cómo funciona (3 pasos) · Quiénes somos (equipo) · Descarga (QR) · Footer.
+Hero · Problem · Features (3 cards) · AI differentiator (with demo) ·
+How it works (3 steps) · About us (team) · Download (QR) · Footer.
 
-## Diseño
+## Design
 
-Paleta índigo premium de Petly: fondos `#1A1652 → #221E5C → #15123A`,
-acento violeta `#8251FD` / `#9D7BFF`, verde salud `#4ADE80`, aqua `#3FC9D0`.
-Tipografía Fredoka (display) + Nunito (cuerpo). Tarjetas glass con blur.
-Responsive, accesible (focus visible, reduced-motion respetado), SEO básico.
+Premium indigo Petly palette: backgrounds `#1A1652 → #221E5C → #15123A`,
+violet accent `#8251FD` / `#9D7BFF`, health green `#4ADE80`, aqua `#3FC9D0`.
+Fredoka (display) + Nunito (body) typography. Glass cards with blur.
+Responsive, accessible (visible focus, reduced-motion respected), basic SEO.
 
 ## Deploy
 
-Cualquier hosting estático. Recomendado Vercel:
+Any static host. Vercel recommended:
 
 ```bash
 npx vercel --prod
 ```
 
-O arrastra la carpeta a Netlify Drop. No requiere variables de entorno.
+Or drag the folder to Netlify Drop. No environment variables required.
