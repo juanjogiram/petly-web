@@ -8,6 +8,8 @@
 <meta property="og:title" content="Petly — El cuidado de tu mascota, siempre un paso adelante" />
 <meta property="og:description" content="Copiloto de salud con IA que entiende a tu mascota de forma individual. Recordatorios proactivos, salud y vitales, citas en segundos." />
 <meta property="og:type" content="website" />
+<link rel="icon" href="petly-mark.png" />
+<link rel="apple-touch-icon" href="petly-mark.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -54,12 +56,13 @@
   nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
     background:linear-gradient(180deg, rgba(26,22,82,.85), rgba(26,22,82,.35));
     border-bottom:1px solid rgba(157,123,255,.1);}
-  .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px;gap:14px}
   .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:1.25rem}
-  .brand svg{filter:drop-shadow(0 0 10px rgba(130,81,253,.6))}
+  .brand img{width:30px;height:30px;filter:drop-shadow(0 0 10px rgba(130,81,253,.6))}
   .nav-links{display:flex;gap:28px;align-items:center}
   .nav-links a{color:var(--soft);font-weight:600;font-size:.95rem;transition:color .2s}
   .nav-links a:hover{color:var(--ink)}
+  .nav-right{display:flex;align-items:center;gap:14px}
   .btn{
     display:inline-flex;align-items:center;gap:9px;font-family:var(--display);font-weight:600;
     padding:12px 22px;border-radius:14px;cursor:pointer;border:none;font-size:1rem;transition:transform .15s, box-shadow .2s;
@@ -69,13 +72,19 @@
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 20px 40px -14px rgba(130,81,253,.9)}
   .btn-ghost{background:rgba(157,123,255,.1);color:var(--ink);border:1px solid rgba(157,123,255,.3)}
   .btn-ghost:hover{background:rgba(157,123,255,.2)}
-  @media(max-width:720px){.nav-links{display:none}}
+  /* language toggle */
+  .lang{display:inline-flex;border:1px solid rgba(157,123,255,.3);border-radius:11px;overflow:hidden;font-family:var(--display);font-weight:600;font-size:.82rem}
+  .lang button{background:transparent;color:var(--soft);border:none;padding:7px 11px;cursor:pointer;transition:background .2s,color .2s}
+  .lang button.on{background:linear-gradient(135deg,var(--violet),var(--violet-deep));color:#fff}
+  @media(max-width:760px){.nav-in{gap:10px}.nav-links{display:none}.nav-cta{padding:9px 13px;font-size:.86rem}}
+  @media(max-width:430px){.brand{font-size:0;gap:0}.brand img{width:32px;height:32px}}
 
   /* ---------- HERO ---------- */
   header{padding:78px 0 56px;text-align:center}
-  .logo-mark{margin:0 auto 18px;width:84px;height:84px;display:grid;place-items:center;
-    border-radius:24px;background:linear-gradient(135deg,rgba(130,81,253,.25),rgba(67,56,140,.2));
-    border:1px solid rgba(157,123,255,.3);box-shadow:0 0 40px -8px rgba(130,81,253,.55)}
+  .logo-mark{margin:0 auto 18px;width:88px;height:88px;display:grid;place-items:center;
+    border-radius:26px;background:linear-gradient(135deg,rgba(130,81,253,.28),rgba(67,56,140,.2));
+    border:1px solid rgba(157,123,255,.3);box-shadow:0 0 44px -8px rgba(130,81,253,.55)}
+  .logo-mark img{width:54px;height:54px}
   h1{font-family:var(--display);font-weight:700;font-size:clamp(2.4rem,6vw,4rem);line-height:1.04;letter-spacing:-.02em;margin:18px 0 0}
   h1 .grad{background:linear-gradient(100deg,var(--violet-bright),var(--violet-lift));-webkit-background-clip:text;background-clip:text;color:transparent}
   .sub{max-width:600px;margin:20px auto 0;color:var(--soft);font-size:1.18rem}
@@ -114,7 +123,6 @@
   .ai li{display:flex;gap:12px;align-items:flex-start;color:var(--ink);font-weight:600}
   .ai li svg{flex:none;margin-top:3px;color:var(--violet-bright)}
   .ai li span{color:var(--soft);font-weight:400;display:block;font-size:.95rem}
-  /* AI demo card */
   .ai-card{padding:22px;border-radius:20px;background:linear-gradient(165deg,rgba(43,35,124,.7),rgba(30,27,72,.6));border:1px solid rgba(157,123,255,.2)}
   .ai-row{display:flex;gap:12px;align-items:center;padding:12px;border-radius:14px;background:rgba(20,18,48,.5);margin-top:10px}
   .ai-row:first-of-type{margin-top:0}
@@ -134,6 +142,30 @@
   .step h3{font-family:var(--display);font-weight:600;font-size:1.15rem}
   .step p{color:var(--soft);margin-top:6px;font-size:.98rem}
 
+  /* install */
+  .install-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:820px){.install-grid{grid-template-columns:1fr}}
+  .install-card{padding:28px}
+  .install-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .install-head .pic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;flex:none}
+  .pic-ios{background:rgba(189,184,230,.14);color:var(--ink)}
+  .pic-android{background:rgba(74,222,128,.14);color:var(--green)}
+  .install-head h3{font-family:var(--display);font-weight:700;font-size:1.3rem}
+  .install-head small{color:var(--faint);font-size:.86rem;display:block}
+  .ol{list-style:none;display:grid;gap:14px;counter-reset:i}
+  .ol li{display:flex;gap:13px;align-items:flex-start;color:var(--soft);font-size:1rem}
+  .ol li::before{counter-increment:i;content:counter(i);flex:none;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;
+    font-family:var(--display);font-weight:700;font-size:.86rem;color:#fff;background:linear-gradient(135deg,var(--violet),var(--violet-deep));margin-top:1px}
+  .ol li b{color:var(--ink);font-weight:700}
+  .install-foot{margin-top:20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .qr{width:128px;height:128px;border-radius:16px;background:#fff;padding:11px;flex:none}
+  .qr img{width:100%;height:100%;image-rendering:pixelated}
+  .open-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:.9rem;
+    padding:10px 15px;border-radius:11px;background:rgba(130,81,253,.16);border:1px solid rgba(157,123,255,.3);color:var(--violet-lift)}
+  .open-link:hover{background:rgba(130,81,253,.26)}
+  .badge{display:inline-flex;align-items:center;gap:7px;font-family:var(--display);font-weight:600;font-size:.84rem;padding:7px 12px;border-radius:10px;background:rgba(20,18,48,.55);border:1px solid rgba(157,123,255,.22)}
+  .badge.free{background:rgba(74,222,128,.16);color:var(--green);border-color:rgba(74,222,128,.3)}
+
   /* team */
   .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   @media(max-width:820px){.team-grid{grid-template-columns:1fr}}
@@ -143,17 +175,21 @@
   .member .role{color:var(--violet-bright);font-weight:700;font-size:.9rem;margin-top:2px}
   .member p{color:var(--soft);font-size:.95rem;margin-top:10px}
 
-  /* download */
-  .dl{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:center;padding:34px}
-  @media(max-width:680px){.dl{grid-template-columns:1fr;text-align:center;justify-items:center}}
-  .qr{width:190px;height:190px;border-radius:18px;background:#fff;padding:14px;display:grid;place-items:center}
-  .qr img{width:100%;height:100%;image-rendering:pixelated}
-  .dl h2{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,3.4vw,2.2rem);line-height:1.1}
-  .dl .badges{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-  @media(max-width:680px){.dl .badges{justify-content:center}}
-  .badge{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:.92rem;padding:9px 15px;border-radius:11px;background:rgba(20,18,48,.55);border:1px solid rgba(157,123,255,.22)}
-  .badge.free{background:rgba(74,222,128,.16);color:var(--green);border-color:rgba(74,222,128,.3)}
-  .dl .hint{color:var(--soft);margin-top:16px;font-size:1rem}
+  /* story */
+  .story{max-width:780px;margin:0 auto}
+  .story-card{padding:36px}
+  .story-card p{color:var(--soft);font-size:1.1rem;margin-top:16px}
+  .story-card p:first-of-type{margin-top:0}
+  .story-card p .hi{color:var(--violet-bright);font-weight:700}
+  .story-card p b{color:var(--ink);font-weight:700}
+  .story-sign{margin-top:24px;font-family:var(--display);font-weight:600;color:var(--violet-lift);font-size:1.05rem}
+  .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+  @media(max-width:760px){.timeline{grid-template-columns:1fr}}
+  .tl{padding:24px;text-align:center}
+  .tl .dot{width:44px;height:44px;border-radius:13px;margin:0 auto 14px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--violet),var(--violet-deep));color:#fff;box-shadow:0 10px 24px -10px rgba(130,81,253,.8)}
+  .tl b{font-family:var(--display);font-weight:600;font-size:1.08rem;display:block}
+  .tl span{color:var(--soft);font-size:.94rem;display:block;margin-top:7px}
 
   /* footer */
   footer{padding:48px 0 36px;border-top:1px solid rgba(157,123,255,.12);margin-top:30px}
@@ -172,21 +208,23 @@
 <nav>
   <div class="wrap nav-in">
     <div class="brand">
-      <svg width="30" height="30" viewBox="0 0 32 32" fill="none">
-        <path d="M8 13c-1-5 1-8 2-8s2 3 2 5M24 13c1-5-1-8-2-8s-2 3-2 5" stroke="#9D7BFF" stroke-width="2" stroke-linecap="round"/>
-        <path d="M16 11c5 0 9 4 9 9 0 4-4 6-9 6s-9-2-9-6c0-5 4-9 9-9Z" stroke="#9D7BFF" stroke-width="2"/>
-        <circle cx="13" cy="19" r="1.3" fill="#9D7BFF"/><circle cx="19" cy="19" r="1.3" fill="#9D7BFF"/>
-        <path d="M16 21v1.5M14.5 23h3" stroke="#9D7BFF" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
+      <img src="petly-mark-white.png" alt="Petly" />
       Petly
     </div>
     <div class="nav-links">
-      <a href="#features">Funciones</a>
-      <a href="#ai">IA</a>
-      <a href="#team">Quiénes somos</a>
-      <a href="#download">Descargar</a>
+      <a href="#features" data-en="Features">Funciones</a>
+      <a href="#ai" data-en="AI">IA</a>
+      <a href="#download" data-en="Install">Instalar</a>
+      <a href="#team" data-en="About us">Quiénes somos</a>
+      <a href="#story" data-en="Story">Historia</a>
     </div>
-    <a href="#download" class="btn btn-primary">Descargar gratis</a>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="es">ES</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a href="#download" class="btn btn-primary nav-cta" data-en="Get it free">Descargar gratis</a>
+    </div>
   </div>
 </nav>
 
@@ -194,29 +232,24 @@
 <header>
   <div class="wrap">
     <div class="logo-mark">
-      <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
-        <path d="M8 13c-1-5 1-8 2-8s2 3 2 5M24 13c1-5-1-8-2-8s-2 3-2 5" stroke="#B7A4FF" stroke-width="2" stroke-linecap="round"/>
-        <path d="M16 11c5 0 9 4 9 9 0 4-4 6-9 6s-9-2-9-6c0-5 4-9 9-9Z" stroke="#B7A4FF" stroke-width="2"/>
-        <circle cx="13" cy="19" r="1.3" fill="#B7A4FF"/><circle cx="19" cy="19" r="1.3" fill="#B7A4FF"/>
-        <path d="M27 9h2M28 8v2" stroke="#B7A4FF" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>
+      <img src="petly-mark-white.png" alt="Petly" />
     </div>
-    <span class="eyebrow">Cuidado con IA</span>
-    <h1>El cuidado de tu mascota,<br><span class="grad">siempre un paso adelante.</span></h1>
-    <p class="sub">Petly no espera a que preguntes. Se adelanta a la próxima vacuna, paseo o cita del veterinario — y entiende a tu mascota de forma individual.</p>
+    <span class="eyebrow" data-en="AI-powered care">Cuidado con IA</span>
+    <h1 data-html data-en='Your pet&#39;s care,<br><span class="grad">always a step ahead.</span>'>El cuidado de tu mascota,<br><span class="grad">siempre un paso adelante.</span></h1>
+    <p class="sub" data-en="Petly doesn’t wait for you to ask. It gets ahead of the next vaccine, walk or vet visit — and understands your pet as an individual.">Petly no espera a que preguntes. Se adelanta a la próxima vacuna, paseo o cita del veterinario — y entiende a tu mascota de forma individual.</p>
     <div class="hero-cta">
       <a href="#download" class="btn btn-primary">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5 1.4-1.4L11 12.2V4h2v8.2l2.6-2.6L17 11z"/><path d="M5 18h14v2H5z"/></svg>
-        Instalar app
+        <span data-en="Install app">Instalar app</span>
       </a>
-      <a href="#ai" class="btn btn-ghost">Ver cómo funciona</a>
+      <a href="#ai" class="btn btn-ghost" data-en="See how it works">Ver cómo funciona</a>
     </div>
     <div class="trust">
-      <span><b>Gratis</b> para empezar</span>
+      <span data-html data-en='<b>Free</b> to start'><b>Gratis</b> para empezar</span>
       <span>·</span>
-      <span><b>IA contextual</b> por mascota</span>
+      <span data-html data-en='<b>Contextual AI</b> per pet'><b>IA contextual</b> por mascota</span>
       <span>·</span>
-      <span>Android · Instalable</span>
+      <span data-en="iPhone · Android · Installable">iPhone · Android · Instalable</span>
     </div>
   </div>
 </header>
@@ -224,7 +257,7 @@
 <!-- PROBLEM STRIP -->
 <section class="strip reveal">
   <div class="wrap">
-    <p>Cuidar a tu mascota no debería ser <span class="hi">adivinar</span>. La información existe, pero es genérica y nunca conoce a <span class="hi">tu</span> compañero.</p>
+    <p data-html data-en='Caring for your pet shouldn’t be <span class="hi">guesswork</span>. The information exists, but it’s generic and never knows <span class="hi">your</span> companion.'>Cuidar a tu mascota no debería ser <span class="hi">adivinar</span>. La información existe, pero es genérica y nunca conoce a <span class="hi">tu</span> compañero.</p>
   </div>
 </section>
 
@@ -232,30 +265,30 @@
 <section id="features">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Lo que hace por ti</span>
-      <h2>Tres formas de cuidar mejor, todos los días</h2>
+      <span class="eyebrow" data-en="What it does for you">Lo que hace por ti</span>
+      <h2 data-en="Three ways to care better, every day">Tres formas de cuidar mejor, todos los días</h2>
     </div>
     <div class="feat-grid">
       <div class="feat glass reveal">
         <div class="ic ic-bell">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
         </div>
-        <h3>Recordatorios proactivos</h3>
-        <p>La IA se adelanta a cada cita, vacuna y paseo. Tú nunca llegas tarde.</p>
+        <h3 data-en="Proactive reminders">Recordatorios proactivos</h3>
+        <p data-en="The AI gets ahead of every visit, vaccine and walk. You’re never late.">La IA se adelanta a cada cita, vacuna y paseo. Tú nunca llegas tarde.</p>
       </div>
       <div class="feat glass reveal">
         <div class="ic ic-heart">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg>
         </div>
-        <h3>Salud y vitales</h3>
-        <p>Vacunas, peso y actividad real. El estado nutricional con alertas claras.</p>
+        <h3 data-en="Health &amp; vitals">Salud y vitales</h3>
+        <p data-en="Vaccines, weight and real activity. Nutrition status with clear alerts.">Vacunas, peso y actividad real. El estado nutricional con alertas claras.</p>
       </div>
       <div class="feat glass reveal">
         <div class="ic ic-cal">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M3 10h18M8 2v4M16 2v4"/><path d="m9 16 2 2 4-4"/></svg>
         </div>
-        <h3>Citas en segundos</h3>
-        <p>Agenda libre, sin fricción. Elige veterinaria, especialista y horario.</p>
+        <h3 data-en="Appointments in seconds">Citas en segundos</h3>
+        <p data-en="Free-form scheduling, zero friction. Pick the vet, specialist and time.">Agenda libre, sin fricción. Elige veterinaria, especialista y horario.</p>
       </div>
     </div>
   </div>
@@ -266,46 +299,46 @@
   <div class="wrap">
     <div class="ai glass reveal">
       <div>
-        <span class="eyebrow">El diferenciador</span>
-        <h2 style="margin-top:12px">Una IA que de verdad conoce a tu mascota</h2>
-        <p class="lead">Cada sugerencia mezcla cinco fuentes de contexto sobre tu compañero específico — no consejos genéricos copiados de internet.</p>
+        <span class="eyebrow" data-en="The differentiator">El diferenciador</span>
+        <h2 style="margin-top:12px" data-en="An AI that truly knows your pet">Una IA que de verdad conoce a tu mascota</h2>
+        <p class="lead" data-en="Every suggestion blends five sources of context about your specific companion — not generic advice copied from the internet.">Cada sugerencia mezcla cinco fuentes de contexto sobre tu compañero específico — no consejos genéricos copiados de internet.</p>
         <ul>
           <li>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
-            <div>Perfil, edad, raza y peso<span>Personalizado a quién es realmente tu mascota</span></div>
+            <div data-html data-en='Profile, age, breed and weight<span>Personalized to who your pet really is</span>'>Perfil, edad, raza y peso<span>Personalizado a quién es realmente tu mascota</span></div>
           </li>
           <li>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
-            <div>Estado nutricional + historial<span>Detecta deficiencias antes de que sean un problema</span></div>
+            <div data-html data-en='Nutrition status + history<span>Catches deficiencies before they become a problem</span>'>Estado nutricional + historial<span>Detecta deficiencias antes de que sean un problema</span></div>
           </li>
           <li>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
-            <div>El clima real de tu ciudad<span>Consejos que cambian con el calor, el frío o la lluvia</span></div>
+            <div data-html data-en='The real weather in your city<span>Advice that changes with the heat, cold or rain</span>'>El clima real de tu ciudad<span>Consejos que cambian con el calor, el frío o la lluvia</span></div>
           </li>
         </ul>
       </div>
       <div class="ai-card reveal">
-        <div style="font-family:var(--display);font-weight:600;font-size:.82rem;color:var(--faint);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px">Sugerencias de hoy · Don</div>
+        <div style="font-family:var(--display);font-weight:600;font-size:.82rem;color:var(--faint);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px" data-en="Today’s suggestions · Don">Sugerencias de hoy · Don</div>
         <div class="ai-row">
           <div class="ai-dot" style="background:rgba(63,201,208,.18);color:var(--aqua)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11Z"/></svg>
           </div>
-          <div><b>Más hidratación hoy</b><small>Hace calor en tu ciudad · añade una 2ª fuente de agua</small></div>
-          <span class="ai-tag tag-warn">Atención</span>
+          <div><b data-en="More hydration today">Más hidratación hoy</b><small data-en="It’s hot in your city · add a 2nd water source">Hace calor en tu ciudad · añade una 2ª fuente de agua</small></div>
+          <span class="ai-tag tag-warn" data-en="Watch">Atención</span>
         </div>
         <div class="ai-row">
           <div class="ai-dot" style="background:rgba(224,122,176,.18);color:var(--berry)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
           </div>
-          <div><b>Calcio bajo dos semanas</b><small>Considera ajustar la dieta o consultar al vet</small></div>
-          <span class="ai-tag tag-crit">Crítico</span>
+          <div><b data-en="Low calcium for two weeks">Calcio bajo dos semanas</b><small data-en="Consider adjusting the diet or asking the vet">Considera ajustar la dieta o consultar al vet</small></div>
+          <span class="ai-tag tag-crit" data-en="Critical">Crítico</span>
         </div>
         <div class="ai-row">
           <div class="ai-dot" style="background:rgba(74,222,128,.16);color:var(--green)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-11"/></svg>
           </div>
-          <div><b>Peso y energía óptimos</b><small>Don va perfecto esta semana — sigue así</small></div>
-          <span class="ai-tag tag-ok">Óptimo</span>
+          <div><b data-en="Optimal weight and energy">Peso y energía óptimos</b><small data-en="Don is doing great this week — keep it up">Don va perfecto esta semana — sigue así</small></div>
+          <span class="ai-tag tag-ok" data-en="Optimal">Óptimo</span>
         </div>
       </div>
     </div>
@@ -316,24 +349,93 @@
 <section id="how">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Cómo funciona</span>
-      <h2>Listo en tres pasos</h2>
+      <span class="eyebrow" data-en="How it works">Cómo funciona</span>
+      <h2 data-en="Ready in three steps">Listo en tres pasos</h2>
     </div>
     <div class="steps">
       <div class="step glass reveal">
         <div class="n">1</div>
-        <h3>Descarga Petly</h3>
-        <p>Escanea el QR e instálala como app en tu Android al instante. Gratis.</p>
+        <h3 data-en="Download Petly">Descarga Petly</h3>
+        <p data-en="Install it as an app on your iPhone or Android in seconds. Free.">Instálala como app en tu iPhone o Android en segundos. Gratis.</p>
       </div>
       <div class="step glass reveal">
         <div class="n">2</div>
-        <h3>Agrega tu mascota</h3>
-        <p>Su nombre, raza, edad y peso. En un minuto Petly ya conoce a tu compañero.</p>
+        <h3 data-en="Add your pet">Agrega tu mascota</h3>
+        <p data-en="Name, breed, age and weight. In a minute Petly already knows your companion.">Su nombre, raza, edad y peso. En un minuto Petly ya conoce a tu compañero.</p>
       </div>
       <div class="step glass reveal">
         <div class="n">3</div>
-        <h3>Recibe cuidado inteligente</h3>
-        <p>Sugerencias contextuales, alertas de salud y recordatorios — cada día.</p>
+        <h3 data-en="Get smart care">Recibe cuidado inteligente</h3>
+        <p data-en="Contextual suggestions, health alerts and reminders — every day.">Sugerencias contextuales, alertas de salud y recordatorios — cada día.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTALL / DOWNLOAD -->
+<section id="download">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-en="Install free">Instala gratis</span>
+      <h2 data-en="Install Petly on your phone">Instala Petly en tu teléfono</h2>
+      <p data-en="On iPhone, add it from Safari. On Android, scan the QR for the app — or install it from the browser too.">En iPhone, agrégala desde Safari. En Android, escanea el QR de la app — o instálala también desde el navegador.</p>
+    </div>
+    <div class="install-grid">
+      <!-- iOS -->
+      <div class="install-card glass reveal">
+        <div class="install-head">
+          <div class="pic pic-ios">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.9c0-2.2 1.8-3.3 1.9-3.4-1-1.5-2.6-1.7-3.2-1.7-1.4-.1-2.6.8-3.3.8-.7 0-1.7-.8-2.8-.8-1.4 0-2.8.8-3.5 2.1-1.5 2.6-.4 6.5 1.1 8.6.7 1 1.5 2.2 2.6 2.2 1 0 1.4-.7 2.7-.7 1.2 0 1.6.7 2.7.7 1.1 0 1.8-1 2.5-2 .8-1.2 1.1-2.3 1.1-2.4 0 0-2.1-.8-2.1-3.2ZM14.3 6.1c.6-.7 1-1.7.9-2.7-.9 0-1.9.6-2.5 1.3-.5.6-1 1.6-.9 2.6 1 .1 2-.5 2.5-1.2Z"/></svg>
+          </div>
+          <div>
+            <h3>iPhone · iOS</h3>
+            <small data-en="Add to Home Screen (PWA)">Agregar a inicio (PWA)</small>
+          </div>
+        </div>
+        <ul class="ol">
+          <li data-html data-en='Open <b>petly-pwa.vercel.app</b> in <b>Safari</b>'>Abre <b>petly-pwa.vercel.app</b> en <b>Safari</b></li>
+          <li data-html data-en='Tap the <b>Share</b> button (the square with an ↑ arrow)'>Toca el botón <b>Compartir</b> (el cuadro con la flecha ↑)</li>
+          <li data-html data-en='Choose <b>“Add to Home Screen”</b>'>Elige <b>“Agregar a inicio”</b></li>
+          <li data-html data-en='Tap <b>Add</b> — Petly appears as an app on your iPhone'>Toca <b>Agregar</b> — Petly aparece como app en tu iPhone</li>
+        </ul>
+        <div class="install-foot">
+          <a class="open-link" href="https://petly-pwa.vercel.app" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg>
+            <span data-en="Open in Safari">Abrir en Safari</span>
+          </a>
+          <span class="badge free" data-en="Free">Gratis</span>
+        </div>
+      </div>
+
+      <!-- Android -->
+      <div class="install-card glass reveal">
+        <div class="install-head">
+          <div class="pic pic-android">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.5 19 7a.5.5 0 0 0-.9-.5l-1.4 2.5a8.7 8.7 0 0 0-9.4 0L5.9 6.5A.5.5 0 0 0 5 7l1.4 2.5A8 8 0 0 0 2 16h20a8 8 0 0 0-4.4-6.5ZM7.5 14a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm9 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>
+          </div>
+          <div>
+            <h3>Android</h3>
+            <small data-en="Download the app (APK)">Descarga la app (APK)</small>
+          </div>
+        </div>
+        <ul class="ol">
+          <li data-html data-en='Scan the <b>QR</b> with your camera'>Escanea el <b>QR</b> con tu cámara</li>
+          <li data-html data-en='Download the <b>APK</b> and open it'>Descarga el <b>APK</b> y ábrelo</li>
+          <li data-html data-en='Allow <b>“install from this source”</b> if asked'>Permite <b>“instalar de esta fuente”</b> si lo pide</li>
+          <li data-html data-en='Done — or install the <b>PWA</b> from Chrome → menu → “Install app”'>¡Listo! — o instala la <b>PWA</b> desde Chrome → menú → “Instalar app”</li>
+        </ul>
+        <div class="install-foot">
+          <div class="qr">
+            <img alt="QR Petly" src="qr.png" onerror="this.style.display='none'" />
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <a class="open-link" href="https://expo.dev/accounts/estka04/projects/petly/builds/a42d5615-060c-4fd3-83e1-99d88b9e4da0" target="_blank" rel="noopener">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5 1.4-1.4L11 12.2V4h2v8.2l2.6-2.6L17 11z"/><path d="M5 18h14v2H5z"/></svg>
+              <span data-en="Download APK">Descargar APK</span>
+            </a>
+            <span class="badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v2H5zM12 2l5 5-1.4 1.4L13 5.8V16h-2V5.8L8.4 8.4 7 7z"/></svg><span data-en="Android · Installable">Android · Instalable</span></span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -343,51 +445,69 @@
 <section id="team">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Quiénes somos</span>
-      <h2>El equipo detrás de Petly</h2>
-      <p>Un equipo pequeño que llevó un producto de tres frentes —app, IA y negocio— de cero a funcional en semanas, con metodología ágil.</p>
+      <span class="eyebrow" data-en="About us">Quiénes somos</span>
+      <h2 data-en="The team behind Petly">El equipo detrás de Petly</h2>
+      <p data-en="A small team that took a three-front product —app, AI and business— from zero to working in weeks, with agile methodology.">Un equipo pequeño que llevó un producto de tres frentes —app, IA y negocio— de cero a funcional en semanas, con metodología ágil.</p>
     </div>
     <div class="team-grid">
       <div class="member glass reveal">
         <div class="avatar" style="background:linear-gradient(135deg,var(--violet),var(--violet-deep))">M</div>
         <h3>Matías</h3>
         <div class="role">Developer</div>
-        <p>Construcción de producto y experiencia. La cara de Petly de cara al usuario.</p>
+        <p data-en="Product build and experience. The user-facing side of Petly.">Construcción de producto y experiencia. La cara de Petly de cara al usuario.</p>
       </div>
       <div class="member glass reveal">
         <div class="avatar" style="background:linear-gradient(135deg,var(--aqua),var(--blue))">J</div>
         <h3>Juan José Giraldo</h3>
         <div class="role">Scrum Master</div>
-        <p>Producto, proceso y negocio. Orquesta los sprints y la visión de Petly.</p>
+        <p data-en="Product, process and business. Orchestrates the sprints and Petly’s vision.">Producto, proceso y negocio. Orquesta los sprints y la visión de Petly.</p>
       </div>
       <div class="member glass reveal">
         <div class="avatar" style="background:linear-gradient(135deg,var(--green),var(--green-booked))">J</div>
         <h3>Juanes</h3>
         <div class="role">Developer</div>
-        <p>El motor de IA y la arquitectura. Hace creíble y escalable la magia.</p>
+        <p data-en="The AI engine and the architecture. Makes the magic believable and scalable.">El motor de IA y la arquitectura. Hace creíble y escalable la magia.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- DOWNLOAD -->
-<section id="download">
+<!-- STORY -->
+<section id="story">
   <div class="wrap">
-    <div class="dl glass reveal">
-      <div class="qr">
-        <img alt="Código QR para descargar Petly" src="qr.png" onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('beforeend','<span style=&quot;color:#15123A;font-family:Fredoka;font-weight:600;text-align:center;font-size:.8rem&quot;>Reemplaza<br>qr.png</span>')" />
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-en="Our story">Nuestra historia</span>
+      <h2 data-en="How Petly was born">Cómo nació Petly</h2>
+    </div>
+    <div class="story">
+      <div class="glass story-card reveal">
+        <p data-html data-en='It all started with a shared frustration: caring for a pet feels like <span class="hi">guesswork</span>. There&#39;s endless advice online, but none of it knows <span class="hi">your</span> companion — their age, breed, history, or the weather in your city. So we asked: what if technology got ahead of you, instead of waiting for you to ask?'>Todo empezó con una frustración compartida: cuidar a una mascota se siente como <span class="hi">adivinar</span>. Hay mil consejos en internet, pero ninguno conoce a <span class="hi">tu</span> compañero — su edad, su raza, su historial, ni el clima de tu ciudad. Así que nos preguntamos: ¿y si la tecnología se adelantara, en vez de esperar a que preguntes?</p>
+        <p data-html data-en='We were three with pieces that fit together. <b>Matías</b>, obsessed with product and experience. <b>Juan José</b>, turning chaos into sprints and guarding the vision and the business. <b>Juanes</b>, giving it an AI brain that truly understands each pet. None of us could do it alone — together, we could.'>Éramos tres con piezas que encajaban. <b>Matías</b>, obsesionado con el producto y la experiencia. <b>Juan José</b>, ordenando el caos en sprints y cuidando la visión y el negocio. <b>Juanes</b>, dándole un cerebro de IA que de verdad entiende a cada mascota. Ninguno podía solo — juntos, sí.</p>
+        <p data-html data-en='In just a few weeks, with agile methodology and many late nights, we took Petly from an idea to a working app: proactive reminders, real health tracking and a contextual AI per pet. And this is only the beginning.'>En pocas semanas, con metodología ágil y muchas noches, llevamos Petly de una idea a una app funcional: recordatorios proactivos, salud real y una IA contextual por mascota. Y esto apenas empieza.</p>
+        <p class="story-sign" data-en="— Matías, Juan José &amp; Juanes">— Matías, Juan José y Juanes</p>
       </div>
-      <div>
-        <span class="eyebrow">Descarga gratis</span>
-        <h2 style="margin-top:12px">Escanea para descargar</h2>
-        <div class="badges">
-          <span class="badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 9.5 19 7a.5.5 0 0 0-.9-.5l-1.4 2.5a8.7 8.7 0 0 0-9.4 0L5.9 6.5A.5.5 0 0 0 5 7l1.4 2.5A8 8 0 0 0 2 16h20a8 8 0 0 0-4.4-6.5ZM7.5 14a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm9 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>
-            Android · Instalable
-          </span>
-          <span class="badge free">Gratis</span>
+      <div class="timeline">
+        <div class="tl glass reveal">
+          <div class="dot">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V17h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2Z"/></svg>
+          </div>
+          <b data-en="The spark">La chispa</b>
+          <span data-en="An idea: care that gets ahead — instead of guessing.">Una idea: que el cuidado se adelante — en vez de adivinar.</span>
         </div>
-        <p class="hint">Apunta la cámara al código → se instala al instante. Sin tiendas, sin esperas.</p>
+        <div class="tl glass reveal">
+          <div class="dot">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg>
+          </div>
+          <b data-en="Three that fit">Tres que encajan</b>
+          <span data-en="Product, business and AI — each one a piece.">Producto, negocio e IA — cada uno su pieza.</span>
+        </div>
+        <div class="tl glass reveal">
+          <div class="dot">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-8 12h6l-1 8 8-12h-6z"/></svg>
+          </div>
+          <b data-en="Zero to real">De cero a real</b>
+          <span data-en="Weeks of agile sprints to a working app.">Semanas de sprints ágiles hasta una app funcional.</span>
+        </div>
       </div>
     </div>
   </div>
@@ -396,18 +516,42 @@
 <!-- FOOTER -->
 <footer>
   <div class="wrap foot-in">
-    <div class="foot-tag">petly · cuidado proactivo para quien más quieres</div>
+    <div class="foot-tag" data-en="petly · proactive care for who you love most">petly · cuidado proactivo para quien más quieres</div>
     <div class="foot-links">
-      <a href="#features">Funciones</a>
-      <a href="#team">Equipo</a>
-      <a href="#download">Descargar</a>
-      <a href="mailto:hola@petly.app">Contacto</a>
+      <a href="#features" data-en="Features">Funciones</a>
+      <a href="#team" data-en="Team">Equipo</a>
+      <a href="#story" data-en="Story">Historia</a>
+      <a href="#download" data-en="Install">Instalar</a>
+      <a href="mailto:hola@petly.app" data-en="Contact">Contacto</a>
     </div>
   </div>
 </footer>
 
 <script>
-  // scroll reveal
+  // ---- i18n (ES default, EN via data-en) ----
+  const nodes = Array.from(document.querySelectorAll('[data-en]'));
+  nodes.forEach(el => {
+    el.dataset.es = el.hasAttribute('data-html') ? el.innerHTML : el.textContent;
+  });
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    nodes.forEach(el => {
+      const val = lang === 'en' ? el.dataset.en : el.dataset.es;
+      if (val == null) return;
+      if (el.hasAttribute('data-html')) el.innerHTML = val; else el.textContent = val;
+    });
+    document.querySelectorAll('.lang button').forEach(b =>
+      b.classList.toggle('on', b.dataset.lang === lang));
+    try { localStorage.setItem('petly-lang', lang); } catch (e) {}
+  }
+  document.querySelectorAll('.lang button').forEach(b =>
+    b.addEventListener('click', () => setLang(b.dataset.lang)));
+  let initial = 'es';
+  try { initial = localStorage.getItem('petly-lang'); } catch (e) {}
+  if (!initial) initial = (navigator.language || 'es').toLowerCase().startsWith('en') ? 'en' : 'es';
+  setLang(initial);
+
+  // ---- scroll reveal ----
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
   },{threshold:.12});
